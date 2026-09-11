@@ -1,170 +1,304 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <title>CMPU3010 - Databases 2 - Week 1</title>
 
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      background-color: #001466;
+      color: #000;
+      font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+      line-height: 1.5;
+    }
 
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      border: 1px solid #333;
+    }
 
+    h1,
+    h2 {
+      text-align: center;
+    }
 
-  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-  <title>Databases 2</title>
+    h1 {
+      margin-top: 0;
+      font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+      font-size: 42px;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    h3 {
+      margin-top: 0;
+      padding: 10px;
+      text-align: center;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+    }
+
+    .section {
+      margin: 25px 0;
+      border: 1px solid #999;
+    }
+
+    .section-content {
+      padding: 15px 20px;
+    }
+
+    .resource {
+      margin: 25px 0;
+      padding: 20px;
+      border: 1px solid #999;
+      text-align: center;
+    }
+
+    .resource-list {
+      margin-left: 30px;
+      padding-left: 20px;
+    }
+    .links {
+      text-align: left;
+    }
+
+    .links p {
+      margin: 0 0 18px 0;
+    }
+
+    a {
+      color: #008000;
+    }
+
+    a:visited {
+      color: #800080;
+    }
+
+    iframe {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 
-<body style="color: rgb(0, 0, 0); background-color: rgb(102, 51, 0);" alink="#000099" link="#009900" vlink="#990099">
-  <table style="width: 836px; height: 41px; text-align: left; margin-left: auto; margin-right: auto;" border="1"
-    cellpadding="2" cellspacing="2">
+<body>
 
-    <tbody>
-      <tr>
-        <td style="background-color: white;">
-          <div style="text-align: center;"><big
-              style="font-family: Agency FB; background-color: white; color: black;"><big><big><big>Databases
-                    2<br>
-                  </big></big></big></big></div>
-          <table style="text-align: left; width: 100%;" border="0" cellpadding="8" cellspacing="2">
-            <tbody>
-              <tr>
-                <td colspan="1" rowspan="1" style="text-align: center;">
-                  <div style="text-align: center;"><big
-                      style="font-family: Agency FB; background-color: white; color: black;"><big><big><big><br>
-                            Week 1</big></big></big></big> </div>
-                  <big><span style="font-weight: bold;"><br>
-                      What are we doing this week?</span><small><br>
-                      This is an INTRODUCTION TO THE MODULE as well as an INTRODUCTION TO
-                      DATABASES.</small></big><br>
-                  &nbsp;<br>
-                  <table style="width: 778px; height: 172px; text-align: left; margin-left: auto; margin-right: auto;"
-                    border="1" cellpadding="2" cellspacing="2">
-                    <tbody>
-                      <tr>
-                        <td colspan="1" rowspan="1" style="text-align: center; font-weight: bold; width: 379px;">
-                          <big><big><big>Lab Class<br>
-                              </big></big></big>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <big>
-                            Week 1 Lab: PostgreSQL setup, database investigation and SQL review<br>
-                            <a
-                              href="https://drive.google.com/file/d/1JfLlllgaxRqDDXv4ZvIvq-ESA2ktBEi2/view?usp=drive_link">
-                              Week 1 Instructions
-                            </a>
-                          </big>
+  <main class="page">
 
-                          </div>
+    <h1>TU856 Year 3 CMPU 3010 Databases 2</h1>
+    <h2>Week 1</h2>
 
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <br>
-                  <table style="width: 778px; height: 172px; text-align: left; margin-left: auto; margin-right: auto;"
-                    border="1" cellpadding="2" cellspacing="2">
-                    <tbody>
-                      <tr>
-                        <td colspan="1" rowspan="1" style="text-align: center; font-weight: bold; width: 379px;">
-                          <big><big><big>Lecture
-                                Notes<br>
-                              </big></big></big>
-                        </td>
-                      </tr>
-                      <tr>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <br>
-                  <br>
-                  <br>
-                  <table style="width: 755px; height: 32px; text-align: left; margin-left: auto; margin-right: auto;"
-                    border="1" cellpadding="2" cellspacing="2">
-                    <tbody>
-                      <tr>
-                        <td style="width: 700px; text-align: center;"><big><big><img style="width: 196px; height: 92px;"
-                                alt="TED logo" src="TED.gif"><br>
-                              <br>
-                              Kenneth Cukier: Big data is better data<br>
-                              <iframe src="https://www.youtube.com/embed/8pHzROP1D-w?si=T0kt6vObwwb0oa-3"
-                                title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" frameborder="0"
-                                height="315" width="560"></iframe><br>
-                            </big></big><big><big><br>
-                              <br>
-                            </big></big></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <br>
-                  <table style="width: 755px; height: 32px; text-align: left; margin-left: auto; margin-right: auto;"
-                    border="1" cellpadding="2" cellspacing="2">
-                    <tbody>
-                      <tr>
-                        <td style="width: 700px; text-align: center;"><big><big><br>
-                            </big></big><big><big>SQL vs. NoSQL Explained (in 4
-                              Minutes)<br>
-                              <iframe src="https://www.youtube.com/embed/_Ss42Vb1SU4?si=wKPsuAkClxxSLhbp"
-                                title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" frameborder="0"
-                                height="315" width="560"></iframe><br>
-                              &nbsp; <br>
-                            </big></big><br>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <br>
-                  <br>
-                  <table style="width: 755px; height: 32px; text-align: left; margin-left: auto; margin-right: auto;"
-                    border="1" cellpadding="2" cellspacing="2">
-                    <tbody>
-                      <tr>
-                        <td style="width: 700px; text-align: center;"><big><big><span
-                                style="font-weight: bold; text-decoration: underline;">Links</span><br>
-                              <br>
-                            </big></big>
-                          <div style="text-align: left;"><big><big><small>What are Databases?<br>
-                                  <a
-                                    href="https://en.wikipedia.org/wiki/Database">https://en.wikipedia.org/wiki/Database</a><br>
-                                  <br>
-                                  <small><big>W3Schools: Learn SQL<br>
-                                      <a href="https://www.w3schools.com/sql/">https://www.w3schools.com/sql/</a><br>
-                                    </big></small></big></small></small></big></big><big><br>
-                            </big><br>
-                            <big>PostgreSQL Documentation <br><a
-                                href="https://www.postgresql.org/docs/current/tutorial.html">
-                                https://www.postgresql.org/docs/current/tutorial.html
-                              </a></big>
-                            <br><br>
-                            <big>PostgreSQL CheatSheet<br>
-                              <a href="https://neon.com/postgresqltutorial/PostgreSQL-Cheat-Sheet.pdf">
-                                https://neon.com/postgresqltutorial/PostgreSQL-Cheat-Sheet.pdf
-                              </a> </big>
-                          </div>
+  <section class="section">
 
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <br>
-                  <br>
+    <h3>What are we doing this week?</h3>
 
-                  If you have any suggestions, corrections, or
-                  comments, please feel free to e-mail me at:<br>
-                  <span style="font-family: Courier New,Courier,monospace;">Deirdre.Lawless(a)tudublin.ie</span><br>
-                  <span style="font-family: Courier New,Courier,monospace;"></span>
-                </td>
-              </tr>
-              <tr>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="section-content">
+
+      <p>
+        This week introduces the module and reviews the database and SQL
+        knowledge that we will build on during the semester.
+      </p>
+
+      <p>
+        We will also set up PostgreSQL and begin working with the CommunityCare
+        database, which will be used as a common case study throughout the module.
+      </p>
+
+    </div>
+
+  </section>
+
+
+    <!-- LAB -->
+    <section class="section">
+
+      <h3>Lab Class</h3>
+
+      <div class="section-content">
+
+        <p>
+          <strong>Week 1 Lab:</strong>
+PostgreSQL setup, database investigation, and review of SQL using the CommunityCare database, which will be used as a common case study throughout the module.
+        </p>
+
+      <ul class="resource-list">
+        <li>
+          <p>
+            <strong>Lab Instructions:</strong>
+            <a href="https://drive.google.com/file/d/1JfLlllgaxRqDDXv4ZvIvq-ESA2ktBEi2/view?usp=drive_link">
+              Week 1 Lab Instructions
+            </a>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <strong>PostgreSQL Documentation:</strong>
+            <a href="https://www.postgresql.org/docs/current/tutorial.html">
+              PostgreSQL Tutorial
+            </a>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <strong>PostgreSQL Cheat Sheet:</strong>
+            <a href="https://neon.com/postgresqltutorial/PostgreSQL-Cheat-Sheet.pdf">
+              PostgreSQL Cheat Sheet
+            </a>
+          </p>
+        </li>
+      </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- LECTURE -->
+    <section class="section">
+
+      <h3>Lecture Notes</h3>
+
+      <div class="section-content">
+
+
+        <p>
+          <strong>Week 1: From Databases 1 to Databases 2</strong><br>
+In the Week 1 lab, you will review the relational database and SQL skills developed in Databases 1 using the CommunityCare database.<br><br>
+During the lecture, we will use the CommunityCare database and your experience of the lab to introduce the main themes of Databases 2 and consider how this module builds on your existing database knowledge.<br><br>
+We will also discuss the module learning outcomes, indicative syllabus and assessment strategy.<br><br>
+
+          (Notes will be posted on Wednesday).
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- VIDEO 1 -->
+    <section class="resource">
+
+      <h3>Video: Big Data</h3>
+
+      <p>
+        <strong>Kenneth Cukier: Big Data is Better Data</strong>
+      </p>
+
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/8pHzROP1D-w?si=T0kt6vObwwb0oa-3"
+        title="Kenneth Cukier: Big Data is Better Data"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+
+    </section>
+
+
+    <!-- VIDEO 2 -->
+    <section class="resource">
+
+      <h3>Video: SQL vs NoSQL</h3>
+
+      <p>
+        <strong>SQL vs. NoSQL Explained (in 4 Minutes)</strong>
+      </p>
+
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/_Ss42Vb1SU4?si=wKPsuAkClxxSLhbp"
+        title="SQL vs NoSQL Explained"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+
+    </section>
+
+
+    <!-- LINKS -->
+    <section class="section">
+
+      <h3>Useful Links</h3>
+
+      <div class="section-content links">
+
+       <ul class="resource-list">
+          <li>
+            <p>
+              <strong>What are Databases?</strong>
+              <a href="https://en.wikipedia.org/wiki/Database">
+                Wikipedia: Database
+              </a>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <strong>SQL Review:</strong>
+              <a href="https://www.w3schools.com/sql/">
+                W3Schools: Learn SQL
+              </a>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <strong>PostgreSQL Documentation:</strong>
+              <a href="https://www.postgresql.org/docs/current/tutorial.html">
+                PostgreSQL Tutorial
+              </a>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <strong>PostgreSQL Cheat Sheet:</strong>
+              <a href="https://neon.com/postgresqltutorial/PostgreSQL-Cheat-Sheet.pdf">
+                PostgreSQL Cheat Sheet
+              </a>
+            </p>
+          </li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      If you have any suggestions, corrections or comments, please email:
+      <strong>Deirdre.Lawless@tudublin.ie</strong>
+    </footer>
+
+  </main>
 
 </body>
 
 </html>
+```

@@ -1,24 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>TU856 Year 3 - CMPU3010 Database Systems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CMPU3010 Database Systems | TU856 Year 3</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 55px 20px;
+        }
+
+        .header-content {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            margin: 0 0 5px 0;
+            font-size: 2.6rem;
+            font-weight: 600;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #d1d5db;
+        }
+
+        header p {
+            margin: 18px 0 0;
+            color: #e5e7eb;
+            font-size: 1.05rem;
+        }
+
+        /* Main page */
+        main {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .module-info {
+            background: white;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin-bottom: 35px;
+            border-left: 5px solid #2563eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .module-info strong {
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        h2.section-title {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+        }
+
+        /* Resource cards */
+        .resources {
+            display: grid;
+            gap: 15px;
+        }
+
+        .resource-card {
+            display: block;
+            background: white;
+            padding: 22px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #252525;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.10);
+        }
+
+        .resource-card h3 {
+            margin: 0 0 5px;
+            color: #2563eb;
+            font-size: 1.15rem;
+        }
+
+        .resource-card p {
+            margin: 0;
+            color: #606770;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            max-width: 950px;
+            margin: 60px auto 20px;
+            padding: 20px;
+            color: #6b7280;
+            font-size: 0.9rem;
+            border-top: 1px solid #d9dde3;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>CMPU3010 Database Systems</h1>
+    <header>
+        <div class="header-content">
+            <h1>CMPU3010 Database Systems</h1>
+            <h2>TU856 Year 3 &nbsp;|&nbsp; 2026/27</h2>
+            <p>Module resources, laboratory exercises and supporting material.</p>
+        </div>
+    </header>
 
-<h2>2026/27</h2>
+    <main>
 
-<p>Module resources, labs and supporting material.</p>
+        <div class="module-info">
+            <p><strong>Programme:</strong> TU856</p>
+            <p><strong>Year:</strong> Year 3</p>
+            <p><strong>Module:</strong> CMPU3010 Database Systems</p>
+            <p><strong>Academic Year:</strong> 2026/27</p>
+        </div>
 
-<h2>Resources</h2>
+        <h2 class="section-title">Module Resources</h2>
 
-<ul>
-    <li><a href="W1/Week1.html">Week 1: Lab Instructions and Lecture Notes</a></li> 
-</ul>
+        <div class="resources">
 
+            <a class="resource-card" href="W1/Week1.html">
+                <h3>Week 1</h3>
+                <p>Lab Instructions and Lecture Notes</p>
+            </a>
+
+            <!-- Add future weeks here -->
+
+            <!--
+            <a class="resource-card" href="W2/Week2.html">
+                <h3>Week 2</h3>
+                <p>Lab Instructions and Lecture Notes</p>
+            </a>
+            -->
+
+        </div>
+
+    </main>
+
+    <footer>
+        Technological University Dublin &nbsp;|&nbsp; CMPU3010 Database Systems
+    </footer>
 
 </body>
+
 </html>

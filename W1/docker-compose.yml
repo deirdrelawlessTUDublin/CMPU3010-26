@@ -60,7 +60,7 @@ services:
     #
     #   Host:     localhost
     #   Port:     5432
-    #   Database: communitycare
+    #   Database: postgres
     #   Username: postgres
     #   Password: postgres
     #
@@ -103,7 +103,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "pg_isready -U postgres -d communitycare"
+          "pg_isready -U postgres -d postgres"
         ]
       interval: 5s
       timeout: 5s

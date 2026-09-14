@@ -1,10 +1,13 @@
 # ==============================================================
-# CMPU 3010 - Databases 2
+# CMPU3010 - Databases 2
 # CommunityCare PostgreSQL Environment
 #
 # This Docker Compose file creates:
 #   1. PostgreSQL 18 database server
 #   2. pgAdmin 4 web interface
+#
+# PostgreSQL database: postgres
+# CommunityCare will be created as a schema inside this database.
 #
 # Start:
 #   docker compose up -d
@@ -13,13 +16,12 @@
 #   docker compose down
 #
 # IMPORTANT:
-#   "docker compose down" preserves your database data.
+#   docker compose down
+#   preserves the PostgreSQL and pgAdmin data.
 #
-#   "docker compose down -v" DELETES the database volume.
-#   Use -v only when you deliberately want to reset the
-#   CommunityCare database to its original state.
+#   docker compose down -v
+#   DELETES the persistent volumes and resets the environment.
 # ==============================================================
-
 
 services:
 
@@ -28,7 +30,7 @@ services:
   # ============================================================
   postgres:
 
-    # All students use the same PostgreSQL version.
+    # PostgreSQL version used for the module.
     image: postgres:18
 
     # Name shown in Docker Desktop / docker commands.
@@ -38,25 +40,18 @@ services:
     restart: unless-stopped
 
     # ----------------------------------------------------------
-    # PostgreSQL initial configuration
+    # PostgreSQL configuration
     # ----------------------------------------------------------
     environment:
-
-      # PostgreSQL administrator account.
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-
-      # This database is created automatically when PostgreSQL
-      # is initialised for the first time.
       POSTGRES_DB: postgres
 
     # ----------------------------------------------------------
-    # Port
+    # PostgreSQL port
     # ----------------------------------------------------------
     #
-    # Makes PostgreSQL accessible from the student's computer.
-    #
-    # Applications such as DBeaver and Python should use:
+    # Connect from DBeaver/Python using:
     #
     #   Host:     localhost
     #   Port:     5432
@@ -68,29 +63,14 @@ services:
       - "5432:5432"
 
     # ----------------------------------------------------------
-    # Storage and initialisation
+    # Persistent PostgreSQL storage
     # ----------------------------------------------------------
+    #
+    # Database data is preserved when the container is stopped
+    # or removed.
+    #
     volumes:
-
-      # Persistent PostgreSQL storage.
-      #
-      # The database remains here even if the container
-      # is stopped or removed.
       - postgres_data:/var/lib/postgresql
-
-      # Mount the local init directory into PostgreSQL's
-      # automatic initialisation directory.
-      #
-      # SQL files in ./init are executed automatically when
-      # PostgreSQL is created for the FIRST time.
-      #
-      # For Lab 1:
-      #
-      #   init/
-      #      01-communitycare-schema.sql
-      #      02-communitycare-data.sql
-      #
-      - ./init:/docker-entrypoint-initdb.d
 
     # ----------------------------------------------------------
     # Health check
@@ -100,11 +80,7 @@ services:
     # to accept connections.
     #
     healthcheck:
-      test:
-        [
-          "CMD-SHELL",
-          "pg_isready -U postgres -d postgres"
-        ]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -140,7 +116,7 @@ services:
     # pgAdmin web port
     # ----------------------------------------------------------
     #
-    # Students access pgAdmin at:
+    # Access pgAdmin at:
     #
     #   http://localhost:8080
     #
@@ -168,11 +144,8 @@ services:
 # Persistent Docker Volumes
 # ==============================================================
 #
-# These are managed by Docker and exist independently of the
-# containers.
-#
 # postgres_data:
-#   Contains the PostgreSQL databases and data.
+#   Contains PostgreSQL databases and data.
 #
 # pgadmin_data:
 #   Contains pgAdmin settings.

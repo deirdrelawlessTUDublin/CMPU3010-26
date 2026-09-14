@@ -48,7 +48,7 @@ services:
 
       # This database is created automatically when PostgreSQL
       # is initialised for the first time.
-      POSTGRES_DB: communitycare
+      POSTGRES_DB: postgres
 
     # ----------------------------------------------------------
     # Port

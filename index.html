@@ -161,6 +161,20 @@
                 display: block;
             }
         }
+        
+
+        .resource-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        
+        .resource-card:hover .resource-link {
+            text-decoration: none;
+        }
+
     </style>
 </head>
 
@@ -212,51 +226,58 @@
 
         </section>
 
-        <!-- Supporting Resources -->
-        <section class="resource-section supporting-resources">
+        
+<!-- Supporting Resources -->
+<section class="resource-section supporting-resources">
 
-            <h2 class="section-title">Supporting Resources</h2>
-            <p class="section-description">
-                Useful documentation and tutorials for software used during the module.
+    <h2 class="section-title">Supporting Resources</h2>
+    <p class="section-description">
+        Useful documentation and tutorials for software used during the module.
+    </p>
+
+    <h3>Docker</h3>
+    <p class="section-description">
+        These short Docker resources provide an introduction to containers
+        and the basic Docker workflow used in the labs.
+    </p>
+
+    <div class="resources">
+
+        <a class="resource-card docker-card"
+           href="https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <h3>What is a Container?</h3>
+            <p>
+                A short introduction to containers and how they differ
+                from traditional virtual machines.
             </p>
 
-            <h3>Docker</h3>
-            <p class="section-description">
-                These short Docker resources provide an introduction to containers
-                and the basic Docker workflow used in the labs.
+            <span class="resource-link">Open Docker Tutorial →</span>
+        </a>
+
+        <a class="resource-card docker-card"
+           href="https://docs.docker.com/get-started/"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <h3>Getting Started with Docker</h3>
+            <p>
+                Docker's introductory guide covering images, containers
+                and the basic Docker workflow.
             </p>
 
-            <div class="resources">
+            <span class="resource-link">Open Getting Started Guide →</span>
+        </a>
 
-                <a class="resource-card docker-card"
-                   href="https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/"
-                   target="_blank"
-                   rel="noopener noreferrer">
+    </div>
 
-                    <h3>What is a Container?</h3>
-                    <p>
-                        A short introduction to containers and how they differ
-                        from traditional virtual machines.
-                    </p>
+</section>
 
-                </a>
 
-                <a class="resource-card docker-card"
-                   href="https://docs.docker.com/get-started/"
-                   target="_blank"
-                   rel="noopener noreferrer">
 
-                    <h3>Getting Started with Docker</h3>
-                    <p>
-                        Docker's introductory guide covering images, containers
-                        and the basic Docker workflow.
-                    </p>
 
-                </a>
-
-            </div>
-
-        </section>
 
     </main>
 

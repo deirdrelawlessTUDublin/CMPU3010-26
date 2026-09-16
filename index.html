@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +34,7 @@
         }
 
         header h1 {
-            margin: 0 0 5px 0;
+            margin: 0 0 5px;
             font-size: 2.6rem;
             font-weight: 600;
         }
@@ -58,23 +59,38 @@
             padding: 0 20px;
         }
 
+        /* Module information */
         .module-info {
             background: white;
             border-radius: 8px;
             padding: 25px 30px;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             border-left: 5px solid #2563eb;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
-        .module-info strong {
-            display: inline-block;
-            min-width: 120px;
+        .module-info p {
+            margin: 7px 0;
         }
 
-        h2.section-title {
+        .module-info strong {
+            display: inline-block;
+            min-width: 130px;
+        }
+
+        /* Sections */
+        .resource-section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
             font-size: 1.6rem;
-            margin-bottom: 18px;
+            margin: 0 0 5px;
+        }
+
+        .section-description {
+            margin: 0 0 20px;
+            color: #606770;
         }
 
         /* Resource cards */
@@ -112,6 +128,16 @@
             font-size: 0.95rem;
         }
 
+        /* Supporting resources */
+        .supporting-resources {
+            padding-top: 30px;
+            border-top: 1px solid #d9dde3;
+        }
+
+        .docker-card {
+            border-left: 4px solid #2496ed;
+        }
+
         /* Footer */
         footer {
             max-width: 950px;
@@ -123,12 +149,16 @@
         }
 
         @media (max-width: 600px) {
+            header {
+                padding: 40px 20px;
+            }
+
             header h1 {
                 font-size: 2rem;
             }
 
-            header {
-                padding: 40px 20px;
+            .module-info strong {
+                display: block;
             }
         }
     </style>
@@ -146,6 +176,7 @@
 
     <main>
 
+        <!-- Module Information -->
         <div class="module-info">
             <p><strong>Programme:</strong> TU856</p>
             <p><strong>Year:</strong> Year 3</p>
@@ -153,36 +184,78 @@
             <p><strong>Academic Year:</strong> 2026/27</p>
         </div>
 
-        <h2 class="section-title">Module Resources</h2>
+        <!-- Weekly Module Resources -->
+        <section class="resource-section">
 
-        <div class="resources">
+            <h2 class="section-title">Weekly Module Resources</h2>
+            <p class="section-description">
+                Lecture notes, laboratory instructions and other material for each week.
+            </p>
 
-            <a class="resource-card" href="W1/Week1.html">
-                <h3>Week 1</h3>
-                <p>Lab Instructions and Lecture Notes</p>
-            </a>
+            <div class="resources">
 
-            <!-- Add future weeks here -->
+                <a class="resource-card" href="W1/Week1.html">
+                    <h3>Week 1</h3>
+                    <p>Lab Instructions and Lecture Notes</p>
+                </a>
 
-            <!--
-            <a class="resource-card" href="W2/Week2.html">
-                <h3>Week 2</h3>
-                <p>Lab Instructions and Lecture Notes</p>
-            </a>
-            -->
+                <!-- Add future weeks here -->
 
-        </div>
-        <section>
-            <a class="resource-card" href=" https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/">
-                <h3>Docker</h3>
-                <p>What is a Container?</p>
-            </a>
-            <a class="resource-card" href="https://docs.docker.com/get-started/">
-                <h3>Docker</h3>
-                <p>Getting Started with Docker</p>
-            </a>
-            
-           
+                <!--
+                <a class="resource-card" href="W2/Week2.html">
+                    <h3>Week 2</h3>
+                    <p>Lab Instructions and Lecture Notes</p>
+                </a>
+                -->
+
+            </div>
+
+        </section>
+
+        <!-- Supporting Resources -->
+        <section class="resource-section supporting-resources">
+
+            <h2 class="section-title">Supporting Resources</h2>
+            <p class="section-description">
+                Useful documentation and tutorials for software used during the module.
+            </p>
+
+            <h3>Docker</h3>
+            <p class="section-description">
+                These short Docker resources provide an introduction to containers
+                and the basic Docker workflow used in the labs.
+            </p>
+
+            <div class="resources">
+
+                <a class="resource-card docker-card"
+                   href="https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <h3>What is a Container?</h3>
+                    <p>
+                        A short introduction to containers and how they differ
+                        from traditional virtual machines.
+                    </p>
+
+                </a>
+
+                <a class="resource-card docker-card"
+                   href="https://docs.docker.com/get-started/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <h3>Getting Started with Docker</h3>
+                    <p>
+                        Docker's introductory guide covering images, containers
+                        and the basic Docker workflow.
+                    </p>
+
+                </a>
+
+            </div>
+
         </section>
 
     </main>
@@ -194,3 +267,4 @@
 </body>
 
 </html>
+```

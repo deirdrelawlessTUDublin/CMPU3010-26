@@ -1,0 +1,155 @@
+# ==============================================================
+# CMPU3010 - Databases 2
+# CommunityCare PostgreSQL Environment
+#
+# This Docker Compose file creates:
+#   1. PostgreSQL 18 database server
+#   2. pgAdmin 4 web interface
+#
+# PostgreSQL database: postgres
+# CommunityCare will be created as a schema inside this database.
+#
+# Start:
+#   docker compose up -d
+#
+# Stop:
+#   docker compose down
+#
+# IMPORTANT:
+#   docker compose down
+#   preserves the PostgreSQL and pgAdmin data.
+#
+#   docker compose down -v
+#   DELETES the persistent volumes and resets the environment.
+# ==============================================================
+
+services:
+
+  # ============================================================
+  # PostgreSQL Database Server
+  # ============================================================
+  postgres:
+
+    # PostgreSQL version used for the module.
+    image: postgres:18
+
+    # Name shown in Docker Desktop / docker commands.
+    container_name: db2-postgres
+
+    # Restart automatically unless explicitly stopped.
+    restart: unless-stopped
+
+    # ----------------------------------------------------------
+    # PostgreSQL configuration
+    # ----------------------------------------------------------
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+
+    # ----------------------------------------------------------
+    # PostgreSQL port
+    # ----------------------------------------------------------
+    #
+    # Connect from DBeaver/Python using:
+    #
+    #   Host:     localhost
+    #   Port:     5432
+    #   Database: postgres
+    #   Username: postgres
+    #   Password: postgres
+    #
+    ports:
+      - "5432:5432"
+
+    # ----------------------------------------------------------
+    # Persistent PostgreSQL storage
+    # ----------------------------------------------------------
+    #
+    # Database data is preserved when the container is stopped
+    # or removed.
+    #
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+    # ----------------------------------------------------------
+    # Health check
+    # ----------------------------------------------------------
+    #
+    # Docker uses this to determine when PostgreSQL is ready
+    # to accept connections.
+    #
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+
+  # ============================================================
+  # pgAdmin 4
+  # ============================================================
+  pgadmin:
+
+    # pgAdmin web interface.
+    image: dpage/pgadmin4:latest
+
+    # Name shown in Docker Desktop.
+    container_name: db2-pgadmin
+
+    # Restart automatically unless explicitly stopped.
+    restart: unless-stopped
+
+    # ----------------------------------------------------------
+    # pgAdmin login
+    # ----------------------------------------------------------
+    #
+    # These credentials are for logging into pgAdmin itself.
+    # They are NOT the PostgreSQL credentials.
+    #
+    environment:
+      PGADMIN_DEFAULT_EMAIL: student@tudublin.ie
+      PGADMIN_DEFAULT_PASSWORD: postgres
+
+    # ----------------------------------------------------------
+    # pgAdmin web port
+    # ----------------------------------------------------------
+    #
+    # Access pgAdmin at:
+    #
+    #   http://localhost:8080
+    #
+    ports:
+      - "8080:80"
+
+    # ----------------------------------------------------------
+    # Persistent pgAdmin configuration
+    # ----------------------------------------------------------
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+    # ----------------------------------------------------------
+    # Startup dependency
+    # ----------------------------------------------------------
+    #
+    # Wait until PostgreSQL is healthy before starting pgAdmin.
+    #
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+
+# ==============================================================
+# Persistent Docker Volumes
+# ==============================================================
+#
+# postgres_data:
+#   Contains PostgreSQL databases and data.
+#
+# pgadmin_data:
+#   Contains pgAdmin settings.
+#
+volumes:
+  postgres_data:
+  pgadmin_data:

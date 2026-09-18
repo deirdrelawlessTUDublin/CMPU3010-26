@@ -1,1 +1,289 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CMPU3010 - Databases 2 - Week 1</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      background-color: #001466;
+      color: #000;
+      font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      border: 1px solid #333;
+    }
+3
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+      font-size: 42px;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    h3 {
+      margin-top: 0;
+      padding: 10px;
+      text-align: center;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+    }
+
+    .section {
+      margin: 25px 0;
+      border: 1px solid #999;
+    }
+
+    .section-content {
+      padding: 15px 20px;
+    }
+
+    .resource {
+      margin: 25px 0;
+      padding: 20px;
+      border: 1px solid #999;
+      text-align: center;
+    }
+
+    .resource-list {
+      margin-left: 30px;
+      padding-left: 20px;
+    }
+    .links {
+      text-align: left;
+    }
+
+    .links p {
+      margin: 0 0 18px 0;
+    }
+
+    a {
+      color: #008000;
+    }
+
+    a:visited {
+      color: #800080;
+    }
+
+    iframe {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 35px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <h1>TU856 Year 3 CMPU 3010 Databases 2</h1>
+    <h2>Week 2</h2>
+
+  <section class="section">
+
+    <h3>What are we doing this week?</h3>
+
+    <div class="section-content">
+
+      <p>
+        This week provides an opportunity for those who missed week 1 to setup their database environment and the case study we are using: community care. 
+        The lab for this week will allow you to refresh your SQL knowledge from Databases 1 and introduce window funcitons which we will focus on during the lecure on Wednesday.
+      </p>
+
+    </div>
+
+  </section>
+
+
+    <!-- LAB -->
+    <section class="section">
+
+      <h3>Lab Class</h3>
+
+      <div class="section-content">
+
+        <p>
+          <strong>Week 2 Lab:</strong>
+This lab will refresh some SQL from Databases 1 and then introduce windows functions that we will investigate further in Wednesday's class.
+You are not expected to remember all SQL syntax from Databases 1. Hints and examples are provided throughout the lab.
+<strong>Saving your work</strong>
+You are not required to submit your work for this lab. However, you should save the SQL that you write during this lab in a file called: week2.sql
+
+        </p>
+
+      <ul class="resource-list">
+        
+          <li>
+            <p></p>
+            <strong>Lab Instructions:</strong>
+            <a href="./CMPU3010 - Lab 2 Instructions.pdf">
+              Week 2 Lab Instructions (pdf)
+            </a>
+      </p>
+          </li>
+                  <li>
+            <p></p>
+            <strong>Lab Solution:</strong>
+              Solution will be posted after Monday's lab (pdf)
+            </a>
+      </p>
+          </li>
+    
+          <li>
+            <p>
+            <strong>SQL to create CommunityCare Schema (01-communitycare-schema.sql):</strong>
+            <a href="./01-communitycare-schema.sql">
+              CommunityCare Schema
+            </a>
+            </p>
+          </li>
+        
+          <li>
+            <p>
+            <strong>SQL to create CommunityCare Data (02-communitycare-data.sql):</strong>
+            <a href="./02-communitycare-data.sql">
+              CommunityCare Data
+            </a>
+              </p>
+          </li>
+
+                  <li>
+            <p>
+            <strong>Docker Compose:</strong>
+            <a href="./docker-compose.yml">
+              Docker Compose to add PostgreSQL and PGAdmin
+            </a>
+              </p>
+          </li>
+
+
+        <li>
+          <p>
+            <strong>PostgreSQL Documentation:</strong>
+            <a href="https://www.postgresql.org/docs/current/tutorial.html">
+              PostgreSQL Tutorial
+            </a>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <strong>PostgreSQL Cheat Sheet:</strong>
+            <a href="https://neon.com/postgresqltutorial/PostgreSQL-Cheat-Sheet.pdf">
+              PostgreSQL Cheat Sheet
+            </a>
+          </p>
+        </li>
+      </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- LECTURE -->
+    <section class="section">
+
+      <h3>Lecture Notes</h3>
+
+      <div class="section-content">
+
+
+        <p>
+          <strong>Week 2: Windows Functions</strong><br>
+
+          (Notes will be posted after the lab class on Monday).
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+
+    <!-- LINKS -->
+    <section class="section">
+
+      <h3>Refresher Videos</h3>
+
+      <div class="section-content links">
+
+       <ul class="resource-list">
+
+
+        <li>
+            <p>
+              <strong>SOCRATICA - JOINS:</strong>
+              <a href="https://www.youtube.com/watch?v=9yeOJ0ZMUYw">
+                SQL Joins Explained
+              </a>
+            </p>
+          </li>
+
+            <li>
+            <p>
+              <strong>SOCRATICA - JOINS:</strong>
+              <a href="https://www.youtube.com/watch?v=Jh_pvk48jHA&t=14s">
+                SQL Joins Examples
+              </a>
+            </p>
+          </li>
+
+         
+            <li>
+            <p>
+              <strong>Aggregation in SQL:</strong>
+              <a href="https://www.youtube.com/watch?v=nNrgRVIzeHg">
+               Functions, GROUP BY, HAVING
+              </a>
+            </p>
+          </li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      If you have any suggestions, corrections or comments, please email:
+      <strong>Deirdre.Lawless@tudublin.ie</strong>
+    </footer>
+
+  </main>
+
+</body>
+
+</html>
+```
